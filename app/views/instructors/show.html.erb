@@ -1,0 +1,10 @@
+<%= @instructor.name %>
+
+<% @instructor.students.each do |student| %>
+<%= link_to student.name, student_path(student) %>
+<% end %> 
+
+<%=form_with model: @instructor, method: "delete" do |f| %>
+
+<%= f.submit value="delete" %>
+<% end %>
